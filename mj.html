@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>^3^</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>let's kiss and make up baby</h2>
+        <audio id="audioPlayer" controls>
+             <source src="/storage/emulated/0/download/Y2meta.app - Rob Deniel - Ang Pagibig (Official Lyric Video) (320 kbps).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="lyricsContainer">
+            <p>Loading lyrics...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style><div>#ff00f1</div>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+#audioPlayer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#lyricsContainer {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const audioPlayer = document.getElementById("audioPlayer");
+    const lyricsContainer = document.getElementById("lyricsContainer");
+
+    // Update lyrics
+    const lyrics = `
+        Isang pikit ko lang\n
+        Kapiling na kitang umindak sa dilim\n
+        At isang halik mo lang\n
+        At kulay-bulaklak na ang aking daigdig, hmm\n
+        ... Oh, walang hanggang palaisipan\n
+        At ikaw na nga ang may pakana\n
+        ... Pag-ibig mo lamang talaga\n
+        Ang pag-ibig mo lamang talaga, oh\n
+        Panghabang-buhay at puno ng kulay\n
+        Pag-ibig mo lamang talaga ang aking hangad\n
+        ... At nang iyong mapana ay\n
+        'Di na kita matiis\n
+        Oh, please, 'wag nang mainis\n
+        Oh, you look so wonderful tonight\n
+        And I can't help these tears in my eyes\n
+        Palagi kang ganyan\n
+        ... Oh, walang hanggang palaisipan\n
+        At ikaw na nga ang may pakana\n
+        ... Pag-ibig mo lamang talaga\n
+        Ang pag-ibig mo lamang talaga, oh\n
+        Panghabang-buhay at puno ng kulay\n
+        Pag-ibig mo lamang talaga ang aking hangad\n
+        ... Oh, oh\n
+        Oh, oh\n
+        Oh, whoa\n
+        Oh\n
+        ... Ang pag-ibig mo lamang talaga\n
+        Ang pag-ibig mo lamang talaga\n
+        Oh, panghabang-buhay at puno ng kulay\n
+        Pag-ibig mo lamang\n
+        ... Ang pag-ibig mo lamang\n
+        Ang pag-ibig mo lamang\n
+        Ang pag-ibig mo lamang\n
+        Ang pag-ibig mo lamang (pag-ibig mo lamang)\n
+        ... Ang pag-ibig mo lamang (pag-ibig mo lamang)\n
+        Ang pag-ibig mo lamang (pag-ibig mo lamang)\n
+        Ang pag-ibig mo lamang (pag-ibig mo lamang)\n
+        Ang pag-ibig mo lamang (pag-ibig mo lamang)
+    `;
+    lyricsContainer.innerHTML = "<p>" + lyrics.split('\n').join("</p><p>") + "</p>";
+
+    // Sync animation with audio playback
+    audioPlayer.addEventListener("play", function() {
+        lyricsContainer.classList.add("scrolling-lyrics");
+    });
+
+    audioPlayer.addEventListener("pause", function() {
+        lyricsContainer.classList.remove("scrolling-lyrics");
+    });
+});
+</script>
